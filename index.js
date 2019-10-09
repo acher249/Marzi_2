@@ -25,9 +25,11 @@ controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
 
 // Create source.
 var source = Marzipano.ImageUrlSource.fromString(
-  "//www.marzipano.net/media/cubemap/{f}.jpg"
+  // "//www.marzipano.net/media/cubemap/{f}.jpg"
+  "https://l13.alamy.com/360/R1GEED/spherical-360-degree-equirectangular-panorama-of-praa-do-povo-funchal-madeira-R1GEED.jpg"
 );
 
+// https://l13.alamy.com/360/R1GEED/spherical-360-degree-equirectangular-panorama-of-praa-do-povo-funchal-madeira-R1GEED.jpg
 // http://paulbourke.net/miscellaneous/cubemaps/canyon1.jpg
 
 // Create geometry.
@@ -50,6 +52,7 @@ scene.switchTo();
 
 // Set up control for enabling/disabling device orientation.
 
+// was wroking with true??
 var enabled = false;
 toggle();
 
