@@ -50,7 +50,9 @@ scene.switchTo();
 
 var enabled = false;
 
-var toggleElement = document.getElementById('toggleDeviceOrientation');
+enable();
+
+// var toggleElement = document.getElementById('toggleDeviceOrientation');
 
 function enable() {
   deviceOrientationControlMethod.getPitch(function(err, pitch) {
@@ -60,13 +62,13 @@ function enable() {
   });
   controls.enableMethod('deviceOrientation');
   enabled = true;
-  toggleElement.className = 'enabled';
+  // toggleElement.className = 'enabled';
 }
 
 function disable() {
   controls.disableMethod('deviceOrientation');
   enabled = false;
-  toggleElement.className = '';
+  // toggleElement.className = '';
 }
 
 function toggle() {
