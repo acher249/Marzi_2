@@ -25,7 +25,7 @@ controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
 
 // Create source.
 var source = Marzipano.ImageUrlSource.fromString(
-  "http://paulbourke.net/miscellaneous/cubemaps/canyon1.jpg"
+  "//www.marzipano.net/media/cubemap/{f}.jpg"
 );
 
 // Create geometry.
@@ -60,13 +60,13 @@ function enable() {
   });
   controls.enableMethod('deviceOrientation');
   enabled = true;
-  toggleElement.className = 'enabled';
+  // toggleElement.className = 'enabled';
 }
 
 function disable() {
   controls.disableMethod('deviceOrientation');
   enabled = false;
-  toggleElement.className = '';
+  // toggleElement.className = '';
 }
 
 function toggle() {
