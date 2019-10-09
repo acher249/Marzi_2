@@ -52,7 +52,7 @@ scene.switchTo();
 
 var enabled = true;
 
-// var toggleElement = document.getElementById('toggleDeviceOrientation');
+var toggleElement = document.getElementById('toggleDeviceOrientation');
 
 function enable() {
   deviceOrientationControlMethod.getPitch(function(err, pitch) {
@@ -62,13 +62,13 @@ function enable() {
   });
   controls.enableMethod('deviceOrientation');
   enabled = true;
-  // toggleElement.className = 'enabled';
+  toggleElement.className = 'enabled';
 }
 
 function disable() {
   controls.disableMethod('deviceOrientation');
   enabled = false;
-  // toggleElement.className = '';
+  toggleElement.className = '';
 }
 
 function toggle() {
@@ -79,4 +79,4 @@ function toggle() {
   }
 }
 
-// toggleElement.addEventListener('click', toggle);
+toggleElement.addEventListener('click', toggle);
