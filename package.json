@@ -25,6 +25,7 @@
     "bowser": "^1.9.4",
     "gl-matrix": "git://github.com/toji/gl-matrix.git#7c8d5dd",
     "hammerjs": "git://github.com/digisfera/hammer.js.git",
+    "heroku": "^7.33.3",
     "minimal-event-emitter": "^1.0.0"
   },
   "devDependencies": {
