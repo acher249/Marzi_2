@@ -77,4 +77,4 @@ function toggle() {
   }
 }
 
-toggleElement.addEventListener('click', toggle);
+// toggleElement.addEventListener('click', toggle);
