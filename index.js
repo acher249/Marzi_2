@@ -25,7 +25,7 @@ controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
 
 // Create source.
 var source = Marzipano.ImageUrlSource.fromString(
-  "//www.marzipano.net/media/cubemap/{f}.jpg"
+  "http://paulbourke.net/miscellaneous/cubemaps/canyon1.jpg"
 );
 
 // Create geometry.
