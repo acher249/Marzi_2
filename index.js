@@ -28,6 +28,8 @@ var source = Marzipano.ImageUrlSource.fromString(
   "//www.marzipano.net/media/cubemap/{f}.jpg"
 );
 
+// http://paulbourke.net/miscellaneous/cubemaps/canyon1.jpg
+
 // Create geometry.
 var geometry = new Marzipano.CubeGeometry([{ tileSize: 1024, size: 1024 }]);
 

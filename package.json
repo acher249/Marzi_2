@@ -14,6 +14,7 @@
     "url": "https://github.com/google/marzipano/issues"
   },
   "scripts": {
+    "start": "index.js",
     "test": "testem ci",
     "livetest": "testem",
     "dev": "scripts/dev",
