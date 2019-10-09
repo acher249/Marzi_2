@@ -73,6 +73,7 @@ function disable() {
 }
 
 function toggle() {
+  console.log("toggle..");
   if (enabled) {
     disable();
   } else {
