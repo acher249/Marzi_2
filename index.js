@@ -15,6 +15,8 @@
  */
 'use strict';
 
+enableOrientaiton();
+
 // Create viewer.
 var viewer = new Marzipano.Viewer(document.getElementById('pano'));
 var bowser = window.bowser;
@@ -66,9 +68,8 @@ scene.switchTo();
 // was wroking with true??
 var enabled = false;
 toggle();
-enabelOrientaiton();
 
-function enabelOrientaiton() {
+function enableOrientaiton() {
 
   // Adam
   // Ask For permissions for Safari on iOS13...
