@@ -15,7 +15,6 @@
  */
 'use strict';
 
-    if (response == 'granted') {
 // Create viewer.
 var viewer = new Marzipano.Viewer(document.getElementById('pano'));
 var bowser = window.bowser;
@@ -67,22 +66,9 @@ scene.switchTo();
 // was wroking with true??
 var enabled = false;
 toggle();
-enableOrientation();
+enabelOrientaiton();
 
-var toggleElement = document.getElementById('toggleDeviceOrientation');
-
-function enable() {
-  deviceOrientationControlMethod.getPitch(function(err, pitch) {
-    if (!err) {
-      view.setPitch(pitch);
-    }
-  });
-  controls.enableMethod('deviceOrientation');
-  enabled = true;
-  // toggleElement.className = 'enabled';
-}
-
-function enableOrientation() {
+function enabelOrientaiton() {
 
   // Adam
   // Ask For permissions for Safari on iOS13...
@@ -95,16 +81,22 @@ function enableOrientation() {
         window.addEventListener('devicemotion', (e) => {
           // do something with e
         })
-      } else{
-        //permission not granted
       }
     })
-    .catch(console.error)
-
-  .catch(console.error)
-  } else {
-    // non iOS 13+
   }
+}
+
+var toggleElement = document.getElementById('toggleDeviceOrientation');
+
+function enable() {
+  deviceOrientationControlMethod.getPitch(function(err, pitch) {
+    if (!err) {
+      view.setPitch(pitch);
+    }
+  });
+  controls.enableMethod('deviceOrientation');
+  enabled = true;
+  // toggleElement.className = 'enabled';
 }
 
 function disable() {
