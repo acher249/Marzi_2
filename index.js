@@ -16,7 +16,7 @@
 'use strict';
 
 // Adam
-// Ask For permissions for Safari on iOS13..
+// Ask For permissions for Safari on iOS13...
 if (typeof DeviceMotionEvent.requestPermission === 'function') {
   // iOS 13+
 
