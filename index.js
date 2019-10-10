@@ -17,6 +17,7 @@
 
 // Create viewer.
 var viewer = new Marzipano.Viewer(document.getElementById('pano'));
+var bowser = window.bowser;
 
 // Register the custom control method.
 var deviceOrientationControlMethod = new DeviceOrientationControlMethod();
@@ -30,11 +31,10 @@ controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
 // );
 
 
-
+// replace the images in the first folder.. 
 var source = Marzipano.ImageUrlSource.fromString(
-  "./tiles/0-9dekalb360_600/{z}/{f}/{y}/{x}.jpg",
-  { cubeMapPreviewUrl: "./tiles/0-9dekalb360_600/preview.jpg" }
-);
+  "./tiles/0-9dekalb360_1100/1/{f}/{y}/{x}.png",
+  /*{ cubeMapPreviewUrl: "./tiles/0-9dekalb360_1100/preview.jpg"}*/);
 
 // https://l13.alamy.com/360/R1GEED/spherical-360-degree-equirectangular-panorama-of-praa-do-povo-funchal-madeira-R1GEED.jpg
 // http://paulbourke.net/miscellaneous/cubemaps/canyon1.jpg
