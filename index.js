@@ -24,8 +24,9 @@ var bowser = window.bowser;
 
 // Register the custom control method.
 var deviceOrientationControlMethod = new DeviceOrientationControlMethod();
+
 var controls = viewer.controls();
-controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
+controls.registerMethod('deviceOrientation', deviceOrientationControlMethod,);
 
 // Create source.
 // var source = Marzipano.ImageUrlSource.fromString(
@@ -33,7 +34,7 @@ controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
 //   "https://l13.alamy.com/360/R1GEED/spherical-360-degree-equirectangular-panorama-of-praa-do-povo-funchal-madeira-R1GEED.jpg"
 // );
 
-
+// Adam - This is the fix********
 // replace the images in the first folder.. 
 var source = Marzipano.ImageUrlSource.fromString(
   "./tiles/0-9dekalb360_1100/1/{f}/{y}/{x}.png",
