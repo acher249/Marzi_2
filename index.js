@@ -15,6 +15,33 @@
  */
 'use strict';
 
+if (typeof DeviceMotionEvent.requestPermission === 'function') {
+  // iOS 13+
+
+  DeviceOrientationEvent.requestPermission()
+  .then(response => {
+    if (response == 'granted') {
+      window.addEventListener('deviceorientation', (e) => {
+        // do something with e
+      })
+    }
+  })
+
+  DeviceMotionEvent.requestPermission()
+  .then(response => {
+    if (response == 'granted') {
+      window.addEventListener('devicemotion', (e) => {
+        // do something with e
+      })
+    }
+  })
+  .catch(console.error)
+
+.catch(console.error)
+} else {
+  // non iOS 13+
+}
+
 // Create viewer.
 var viewer = new Marzipano.Viewer(document.getElementById('pano'));
 var bowser = window.bowser;
