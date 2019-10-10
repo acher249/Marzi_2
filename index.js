@@ -24,9 +24,16 @@ var controls = viewer.controls();
 controls.registerMethod('deviceOrientation', deviceOrientationControlMethod);
 
 // Create source.
+// var source = Marzipano.ImageUrlSource.fromString(
+//   // "//www.marzipano.net/media/cubemap/{f}.jpg"
+//   "https://l13.alamy.com/360/R1GEED/spherical-360-degree-equirectangular-panorama-of-praa-do-povo-funchal-madeira-R1GEED.jpg"
+// );
+
+
+
 var source = Marzipano.ImageUrlSource.fromString(
-  // "//www.marzipano.net/media/cubemap/{f}.jpg"
-  "https://l13.alamy.com/360/R1GEED/spherical-360-degree-equirectangular-panorama-of-praa-do-povo-funchal-madeira-R1GEED.jpg"
+  "./tiles/0-9dekalb360_600/{z}/{f}/{y}/{x}.jpg",
+  { cubeMapPreviewUrl: "./tiles/0-9dekalb360_600/preview.jpg" }
 );
 
 // https://l13.alamy.com/360/R1GEED/spherical-360-degree-equirectangular-panorama-of-praa-do-povo-funchal-madeira-R1GEED.jpg
