@@ -1,5 +1,12 @@
 # Marzipano
 
+# Pipeline into correct preview cubemap
+  - take equirectangular into 360 toolkit to get first pass at vertical cubemap
+  - then run photoshop action to re-organize the vertical cubemap sequence
+  - then use preview image as main.
+
+
+
 A 360° media viewer for the modern web.
 
 This is not an official Google product.
