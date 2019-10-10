@@ -18,26 +18,9 @@
 // Create viewer.
 var viewer = new Marzipano.Viewer(document.getElementById('pano'));
 var bowser = window.bowser;
-var Hammer = Marzipano.dependencies['hammerjs'];
 
-var hammerTouch = viewer._hammerManagerTouch;
-var hammerMouse = viewer._hammerManagerMouse;
-
-// Change scene on two-finger swipe.
-var pinchRecognizer = hammerTouch.manager().get('pinch');
-var swipeRecognizer = new Hammer.Swipe({ direction: Hammer.HORIZONTAL, pointers: 2 });
-swipeRecognizer.recognizeWith(pinchRecognizer);
-hammerTouch.manager().add(swipeRecognizer);
-
-// Prevent pan and zoom events from being handled after swipe ends.
-function disableControlsTemporarily() {
-  viewer.controls().disableMethod('touchView');
-  viewer.controls().disableMethod('pinch');
-  setTimeout(function() {
-    viewer.controls().enableMethod('touchView');
-    viewer.controls().enableMethod('pinch');
-  }, 200);
-}
+// Adam
+// Add pinch zoom
 
 // Register the custom control method.
 var deviceOrientationControlMethod = new DeviceOrientationControlMethod();
@@ -110,19 +93,5 @@ function toggle() {
     enable();
   }
 }
-
-// Adam Zoom
-// Zoom on tap.
-  function zoomOnTap(e) {
-    var coords = viewer.view().screenToCoordinates(e.center);
-    coords.fov = viewer.view().fov() * 0.8;
-    viewer.lookTo(coords, { transitionDuration: 300 });
-  }
-  var tapRecognizerMouse = new Hammer.Tap({ taps: 2, posThreshold: 20 });
-  hammerMouse.manager().add(tapRecognizerMouse);
-  hammerMouse.on('tap', zoomOnTap);
-  var tapRecognizerTouch = new Hammer.Tap({ taps: 2, posThreshold: 50 })
-  hammerTouch.manager().add(tapRecognizerTouch);
-  hammerTouch.on('tap', zoomOnTap);
 
 toggleElement.addEventListener('click', toggle);
