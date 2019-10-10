@@ -73,7 +73,7 @@ function enable() {
   });
   controls.enableMethod('deviceOrientation');
   enabled = true;
-  toggleElement.className = 'enabled';
+  // toggleElement.className = 'enabled';
 }
 
 function disable() {
