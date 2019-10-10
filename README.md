@@ -1,9 +1,9 @@
 # Marzipano
 
 # Pipeline into correct preview cubemap
-  - take equirectangular into 360 toolkit to get first pass at vertical cubemap
-  - then run photoshop action to re-organize the vertical cubemap sequence
-  - then use preview image as main.
+  - take equirectangular into 360 toolkit to get individual cubes out.
+  - then run photoshop action to flip them horizontally.
+  - then replace the individual cubes in the first folder of the ./tiles folder.
 
 
 
