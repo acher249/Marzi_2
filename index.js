@@ -15,35 +15,7 @@
  */
 'use strict';
 
-// Adam
-// Ask For permissions for Safari on iOS13...
-if (typeof DeviceMotionEvent.requestPermission === 'function') {
-  // iOS 13+
-
-  DeviceOrientationEvent.requestPermission()
-  .then(response => {
     if (response == 'granted') {
-      window.addEventListener('deviceorientation', (e) => {
-        // do something with e
-      })
-    }
-  })
-
-  DeviceMotionEvent.requestPermission()
-  .then(response => {
-    if (response == 'granted') {
-      window.addEventListener('devicemotion', (e) => {
-        // do something with e
-      })
-    }
-  })
-  .catch(console.error)
-
-.catch(console.error)
-} else {
-  // non iOS 13+
-}
-
 // Create viewer.
 var viewer = new Marzipano.Viewer(document.getElementById('pano'));
 var bowser = window.bowser;
@@ -95,6 +67,7 @@ scene.switchTo();
 // was wroking with true??
 var enabled = false;
 toggle();
+enableOrientation();
 
 var toggleElement = document.getElementById('toggleDeviceOrientation');
 
@@ -107,6 +80,31 @@ function enable() {
   controls.enableMethod('deviceOrientation');
   enabled = true;
   // toggleElement.className = 'enabled';
+}
+
+function enableOrientation() {
+
+  // Adam
+  // Ask For permissions for Safari on iOS13...
+  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    // iOS 13+
+
+    DeviceMotionEvent.requestPermission()
+    .then(response => {
+      if (response == 'granted') {
+        window.addEventListener('devicemotion', (e) => {
+          // do something with e
+        })
+      } else{
+        //permission not granted
+      }
+    })
+    .catch(console.error)
+
+  .catch(console.error)
+  } else {
+    // non iOS 13+
+  }
 }
 
 function disable() {
